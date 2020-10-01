@@ -1,0 +1,22 @@
+.container {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    width: 200px;
+    height: 300px;
+    /* margin: 3px; */
+    border-style: groove;
+  }
+
+
+
+
+ .image{
+    width: 200px;
+    height: 200px; 
+    display: inline-block; 
+    background-size: cover;
+    background-position: center;
+    
+    overflow: hidden;
+} 
