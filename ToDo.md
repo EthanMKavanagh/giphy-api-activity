@@ -21,7 +21,7 @@ CLIENT SIDE
     
         ---JUSTUS AND MIKE
 
-        [] HEADER COMPONENT (IMPORT To APP) 
+        [x] HEADER COMPONENT (IMPORT To APP) 
 
         [] SEARCH VIEW COMPONENT (IMPORT to APP)
 
@@ -31,7 +31,7 @@ CLIENT SIDE
                         [] DISPATCH - from Component to Saga (index.js), fetchSearchSaga (which is a GET request from SERVER (which is pulling from giphy API)) -- THIS IS WHAT WILL PULL IN DATA FROM SERVER TO OUR REDUCER (index.js)
 
             []Display Results on DOM LIST COMPONENT (IMPORT to SEARCH VIEW)
-                    [] .Map (grab that information using mapStateToProps)
+                    [x] .Map (grab that information using mapStateToProps)
 
                         []IMAGE COMPONENT (IMPORT to LIST COMPONENT)
                             [] Image

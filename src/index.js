@@ -14,6 +14,16 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 function* watcherSaga() {
     // Input saga functions here
     // ex. yield takeEvery('FETCH_GIF', fetchGifSaga);
+    yield takeEvery('CREATE_FAVE', createFave)
+}
+
+function* createFave(action) {
+    console.log('hit createFave');
+    yield axios({
+        method: 'POST',
+        url: '/image',
+        payload: action.payload
+    });
 }
 
 // CREATE SAGA MIDDLEWARE
@@ -29,5 +39,5 @@ const reduxStore = createStore(
 
 sagaMiddleware.run(watcherSaga);
 
-ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, 
+ReactDOM.render(<Provider store={reduxStore}><App /></Provider>,
     document.getElementById('react-root'));
