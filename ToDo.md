@@ -7,10 +7,12 @@ CLIENT SIDE
             [] Saga 
             [] Axios
             [] npm installs 
-                [] install react-redux
-                [] install redux
-                [] install saga
-                [] npm install dotenv
+                [] redux-saga
+                [] redux-logger
+                [] redux
+                [] dotenv
+                [] react-router-dom
+                [] react-redux
         [] Create env file
     
     ROUTES
