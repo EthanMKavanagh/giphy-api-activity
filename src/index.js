@@ -27,6 +27,18 @@ function* watcherSaga() {
   // Input saga functions here
   // ex. yield takeEvery('FETCH_GIF', fetchGifSaga);
   yield takeEvery("FETCH_IMAGE", fetchImageSaga);
+  // Input saga functions here
+  // ex. yield takeEvery('FETCH_GIF', fetchGifSaga);
+  yield takeEvery("CREATE_FAVE", createFave);
+}
+
+function* createFave(action) {
+  console.log("hit createFave");
+  yield axios({
+    method: "POST",
+    url: "/image",
+    payload: action.payload,
+  });
 }
 
 // CREATE SAGA MIDDLEWARE
