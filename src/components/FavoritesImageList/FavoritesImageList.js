@@ -9,6 +9,7 @@ class FavoritesImageList extends Component {
             <div>
                 <h3>Favorites - Image List</h3>
                 <FavoritesImage />
+                <FavoritesImage />
             </div>
         );
     }
