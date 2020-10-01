@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import FavoritesView from '../FavoritesView/FavoritesView.js'
 
 class App extends Component {
 
@@ -7,10 +7,12 @@ class App extends Component {
     return (
       <div>
         <h1>Giphy Search!</h1>
+        <FavoritesView />
       </div>
+
     );
   }
-  
+
 }
 
 export default App;
