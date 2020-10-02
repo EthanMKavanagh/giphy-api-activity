@@ -14,15 +14,16 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 function* watcherSaga() {
     // Input saga functions here
     // ex. yield takeEvery('FETCH_GIF', fetchGifSaga);
+    //yield takeEvery('FETCH_IMAGE', fetchImageSaga);
     yield takeEvery('CREATE_FAVE', createFave)
 }
 
 function* createFave(action) {
-    console.log('hit createFave');
+    console.log('hit createFave', action.payload);
     yield axios({
         method: 'POST',
-        url: '/image',
-        payload: action.payload
+        url: '/api/favorite',
+        data: action.payload
     });
 }
 
