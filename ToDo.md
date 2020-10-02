@@ -16,6 +16,7 @@ CLIENT SIDE
                 [X] react-router-dom
                 [X] react-redux
         [X] Create env file
+
     
     ROUTES
     

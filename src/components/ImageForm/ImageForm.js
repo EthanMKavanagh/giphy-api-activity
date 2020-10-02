@@ -5,8 +5,9 @@ class ImageForm extends Component {
   state = {
     image: "",
   };
-  searchImages = (event) => {
-    event.preventDefault();
+  searchImage = (event) => {
+    console.log("in searchImage", event);
+
     this.props.dispatch({
       type: "FETCH_IMAGE",
       payload: this.state.image,
@@ -23,19 +24,19 @@ class ImageForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.searchImages}>
-          <input
-            type="text"
-            placeholder="Search Giphy Catergories"
-            value={this.state}
-            onChange={this.handleInputChange}
-          ></input>
+        <input
+          type="text"
+          placeholder="Search Giphy Catergories"
+          value={this.state.image}
+          onChange={this.handleInputChange}
+        ></input>
 
-          <input type="Submit" value="Search for Image" />
-        </form>
+        <button type="Submit" onClick={(event) => this.searchImage(event)}>
+          Submit
+        </button>
       </div>
     ); //end return
   } // end render
 } //end class
 
-export default ImageForm;
+export default connect()(ImageForm);

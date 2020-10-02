@@ -8,11 +8,12 @@ class ImageList extends Component {
   render() {
     return (
       <div>
-        {this.props.images.map(image =>
+        {/* {this.props.images.map(image =>
+
           <ImageListItem
-            image={image}
+            image={this.images}
           />
-        )}
+        )} */}
       </div>
     );
   }
