@@ -25,6 +25,9 @@ function* createFave(action) {
         url: '/api/favorite',
         data: action.payload
     });
+    yield put({
+        type: 'FETCH_IMAGE'
+    });
 }
 
 // CREATE SAGA MIDDLEWARE
