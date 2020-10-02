@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './FavoritesImage.css'
 import { Button, Menu, MenuItem } from '@material-ui/core';
+import { connect } from 'react-redux';
 
+//Global Variable 
 let category = '';
 
 function FavoritesImage(props) {
@@ -16,6 +18,7 @@ function FavoritesImage(props) {
         setAnchorEl(null);
     };
 
+
     const setCategory = (value) => {
         category = value;
         console.log('category is:', category);
@@ -23,18 +26,24 @@ function FavoritesImage(props) {
         // return category;
     }
 
+    console.log('category is:', props.category);
+
     return (
         <div className="container">
             <div className="image-container">
                 <img
-                    src={'https://media.giphy.com/media/2GqhGZEwKI9ZRW3BjL/giphy.gif'}
-                    alt={`test title`}
+                    src={props.url}
+                    alt={`default title`}
                     className="image"
+                    key={props.id}
                 />
             </div>
 
             <div>
-                <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                <Button aria-controls="simple-menu" aria-haspopup="true"
+                    onClick={handleClick}
+                // onClick={() => props.changeCategory(props.id)}
+                >
                     Set Category
                     </Button>
                 <Menu
@@ -44,32 +53,24 @@ function FavoritesImage(props) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem
-                        onClick={() => setCategory()}
-                        value={'Funny'}
-                    >Funny
-                    </MenuItem>
-
-                    <MenuItem
-                        onClick={() => setCategory('Cohort')}
-                    >Cohort</MenuItem>
-
-                    <MenuItem
-                        onClick={() => setCategory('Cartoon')}
-                    >Cartoon</MenuItem>
-
-                    <MenuItem
-                        onClick={() => setCategory('NSFW')}
-                    >NSFW</MenuItem>
-
-                    <MenuItem
-                        onClick={() => setCategory('Meme')}
-                    >Meme</MenuItem>
+                    {props.category.map(category =>
+                        <MenuItem
+                            onClick={() => setCategory()}
+                            value={category.id}
+                        >{category.name}
+                        </MenuItem>
+                    )}
                 </Menu>
             </div>
 
-            <p>Category: {category} </p>
-        </div>
+            <p>Category: {props.category.name} </p>
+        </div >
     );
 }
-export default FavoritesImage;
+const mapStateToProps = (reduxState) => ({
+    url: reduxState.favoritesListReducer.url,
+    id: reduxState.favoritesListReducer.id,
+    category_id: reduxState.favoritesListReducer.category_id,
+    category: reduxState.categoryListReducer
+})
+export default connect(mapStateToProps)(FavoritesImage);
