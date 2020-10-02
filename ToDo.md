@@ -5,17 +5,17 @@ CLIENT SIDE
     -- ETHAN 
     
     Index.js
-        [] Imports
-            [] Saga 
-            [] Axios
-            [] npm installs 
-                [] redux-saga
-                [] redux-logger
-                [] redux
-                [] dotenv
-                [] react-router-dom
-                [] react-redux
-        [] Create env file
+        [X] Imports
+            [X] Saga 
+            [X] Axios
+            [X] npm installs 
+                [X] redux-saga
+                [X] redux-logger
+                [X] redux
+                [X] dotenv
+                [X] react-router-dom
+                [X] react-redux
+        [X] Create env file
     
     ROUTES
     

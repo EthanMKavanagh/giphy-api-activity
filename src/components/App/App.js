@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <SearchView />
+        {/* <SearchView /> */}
         <h1>Giphy Search!</h1>
         <FavoritesView />
       </div>
