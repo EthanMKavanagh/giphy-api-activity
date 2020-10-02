@@ -133,7 +133,6 @@ const sagaMiddleware = createSagaMiddleware();
 
 // REDUX STORE
 const reduxStore = createStore(
-  feature-FavoritesComponents
     combineReducers({
         favoritesListReducer,// Reducer that holds Favorites List
         categoryListReducer
