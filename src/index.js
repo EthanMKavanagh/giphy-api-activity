@@ -11,14 +11,23 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 // CREATE REDUCERS HERE
 // --->
 
+//Mike's GET image reducer
+const imageReducer = (state = [], action) => {
+  console.log("in imageReducer", state, action);
+
+  if (action.type === "SET_IMAGE") {
+    return action.payload;
+  }
+  return state;
+};
 function* fetchImageSaga(action) {
   console.log("in fetchImageSaga", action);
   let response = yield axios({
     method: "GET",
-    url: "/api/category",
+    url: "/api/image",
   });
   yield put({
-    type: "FETCH_IMAGE",
+    type: "SET_IMAGE",
     payload: response.data,
   });
 }
@@ -48,6 +57,7 @@ const sagaMiddleware = createSagaMiddleware();
 const reduxStore = createStore(
   combineReducers({
     // ADD REDUCER HERE
+    imageReducer,
   }),
   applyMiddleware(logger, sagaMiddleware)
 );

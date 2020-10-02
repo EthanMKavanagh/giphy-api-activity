@@ -1,22 +1,23 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 // Route includes
-const favoriteRouter = require('./routes/favorite.router');
-const categoryRouter = require('./routes/category.router');
+const favoriteRouter = require("./routes/favorite.router");
+const categoryRouter = require("./routes/category.router");
+const imageRouter = require("./routes/image.router");
 
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static('build'));
+app.use(express.static("build"));
 
 /* Routes */
-app.use('/api/favorite', favoriteRouter);
-app.use('/api/category', categoryRouter);
-
+app.use("/api/favorite", favoriteRouter);
+app.use("/api/category", categoryRouter);
+app.use("/api/image", imageRouter);
 // App Set //
 const PORT = process.env.PORT || 5000;
 
